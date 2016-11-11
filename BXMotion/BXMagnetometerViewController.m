@@ -1,30 +1,33 @@
 //
-//  BXGyroViewController.m
+//  BXMagnetometerViewController.m
 //  BXMotion
 //
-//  Created by baixinpan on 16/11/5.
+//  Created by baixinpan on 16/11/9.
 //  Copyright © 2016年 pan. All rights reserved.
 //
 
-#import "BXGyroViewController.h"
+#import "BXMagnetometerViewController.h"
 #import "BXLineChart.h"
 #import "BXMotionManager.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface BXGyroViewController ()
+@interface BXMagnetometerViewController ()<CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet BXLineChart *xLineChart;
 @property (weak, nonatomic) IBOutlet BXLineChart *yLineChart;
 @property (weak, nonatomic) IBOutlet BXLineChart *zLineChart;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
 
 @property (nonatomic, strong) BXMotionManager *motionManager;
 
 @property (nonatomic, strong) NSMutableArray *xArray;
 @property (nonatomic, strong) NSMutableArray *yArray;
 @property (nonatomic, strong) NSMutableArray *zArray;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
-@implementation BXGyroViewController
+@implementation BXMagnetometerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +39,24 @@
     [self loadChartWithDates:_xLineChart];
     [self loadChartWithDates:_yLineChart];
     [self loadChartWithDates:_zLineChart];
+    
+    self.locationManager= [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    if ([CLLocationManager headingAvailable]) {
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.headingFilter = kCLHeadingFilterNone;
+        [self.locationManager startUpdatingHeading];
+    }
     // Do any additional setup after loading the view.
 }
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    _arrowImageView.transform = CGAffineTransformIdentity;
+    CGAffineTransform transform = CGAffineTransformMakeRotation(-1 * M_PI*newHeading.magneticHeading/180.0);
+    _arrowImageView.transform = transform;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.motionManager stopGyro];
@@ -66,9 +85,9 @@
     BXMotionManager *motionManager = [[BXMotionManager alloc] init];
     self.motionManager = motionManager;
     
-    motionManager.gyroInterval = 0.5;
+    motionManager.magnetometerInterval = 0.5;
     
-    [motionManager setMotionGyroBlock:^(double x, double y, double z) {
+    [motionManager setMotionMagnetometerBlock:^(double x, double y, double z) {
         //        NSString *str = [NSString stringWithFormat:@"x = %f, y = %f, z = %f",x,y,z];
         
         NSNumber *xNumber = [NSNumber numberWithFloat:x];
@@ -88,10 +107,10 @@
 
 - (IBAction)startAction:(UIButton *)sender {
     if (!sender.selected) {
-        [self.motionManager startGyro];
+        [self.motionManager startMagnetometer];
         [sender setTitle:@"停止" forState:UIControlStateNormal];
     } else {
-        [self.motionManager stopGyro];
+        [self.motionManager stopMagnetometer];
         [sender setTitle:@"开始" forState:UIControlStateNormal];
     }
     sender.selected = !sender.selected;

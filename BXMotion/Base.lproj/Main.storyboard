@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M6X-Ma-rog">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LlV-gW-8GN" id="AmX-ub-EGO">
-                                            <frame key="frameInset" width="342" height="43.5"/>
+                                            <frame key="frameInset" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="行为识别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxl-AZ-SDW">
@@ -40,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HL6-wY-eGX" id="Z10-KB-ATr">
-                                            <frame key="frameInset" width="342" height="43.5"/>
+                                            <frame key="frameInset" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加速度传感器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFt-V2-DY3">
@@ -60,10 +62,10 @@
                                         <rect key="frame" x="0.0" y="152" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K87-FT-zAh" id="tNO-lC-wIA">
-                                            <frame key="frameInset" width="342" height="43.5"/>
+                                            <frame key="frameInset" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="螺旋仪传感器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yc-p1-7b1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="陀螺仪传感器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yc-p1-7b1">
                                                     <frame key="frameInset" minX="23" minY="11" width="185" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -74,6 +76,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="yVu-at-Szf" kind="push" id="BK4-mq-481"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kgn-5t-38h">
+                                        <rect key="frame" x="0.0" y="196" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kgn-5t-38h" id="axT-3g-N8h">
+                                            <frame key="frameInset" width="342" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="磁力传感器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLo-A9-luO">
+                                                    <frame key="frameInset" minX="23" minY="11" width="185" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Yyy-tK-vBD" kind="push" id="vbA-qj-xBb"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -123,27 +145,76 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行为识别" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgM-1f-Zaj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lU7-3o-c35"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计步器" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3a-Af-eHI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="k6B-LM-MFJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmF-Hm-rTi">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="W66-vk-HBC"/>
+                                </constraints>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startSetpAction:" destination="zHA-lT-V2J" eventType="touchUpInside" id="05R-WR-UZB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG3-Sl-xZG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="f2i-9z-mQv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="edx-51-LzJ" secondAttribute="trailing" constant="49" id="1DA-kj-QGR"/>
+                            <constraint firstAttribute="trailing" secondItem="yG3-Sl-xZG" secondAttribute="trailing" id="4V4-ln-llP"/>
+                            <constraint firstItem="yG3-Sl-xZG" firstAttribute="leading" secondItem="1Na-QN-2bd" secondAttribute="leading" id="5bo-yf-hYI"/>
                             <constraint firstItem="E7F-K0-xCc" firstAttribute="leading" secondItem="1Na-QN-2bd" secondAttribute="leading" constant="12" id="8k2-rL-muA"/>
                             <constraint firstItem="edx-51-LzJ" firstAttribute="leading" secondItem="1Na-QN-2bd" secondAttribute="leading" constant="41" id="9IV-b4-C22"/>
+                            <constraint firstItem="yG3-Sl-xZG" firstAttribute="top" secondItem="g3a-Af-eHI" secondAttribute="bottom" constant="29" id="Bpp-gv-KuC"/>
                             <constraint firstItem="E7F-K0-xCc" firstAttribute="top" secondItem="hwN-5a-aCj" secondAttribute="bottom" constant="51" id="C9X-Yh-iRB"/>
+                            <constraint firstItem="QgM-1f-Zaj" firstAttribute="leading" secondItem="1Na-QN-2bd" secondAttribute="leading" id="Jk6-eW-UME"/>
                             <constraint firstAttribute="trailing" secondItem="E7F-K0-xCc" secondAttribute="trailing" constant="12" id="M3p-ge-LnF"/>
+                            <constraint firstAttribute="trailing" secondItem="g3a-Af-eHI" secondAttribute="trailing" id="NmD-zs-woh"/>
                             <constraint firstItem="edx-51-LzJ" firstAttribute="top" secondItem="E7F-K0-xCc" secondAttribute="bottom" constant="66" id="NtO-0b-gps"/>
+                            <constraint firstAttribute="trailing" secondItem="QgM-1f-Zaj" secondAttribute="trailing" id="Oqa-1G-Lli"/>
+                            <constraint firstItem="EmF-Hm-rTi" firstAttribute="trailing" secondItem="E7F-K0-xCc" secondAttribute="trailing" id="Rar-Ry-TIk"/>
+                            <constraint firstItem="g3a-Af-eHI" firstAttribute="leading" secondItem="1Na-QN-2bd" secondAttribute="leading" id="Taf-hr-9Xh"/>
+                            <constraint firstItem="EmF-Hm-rTi" firstAttribute="top" secondItem="edx-51-LzJ" secondAttribute="bottom" constant="58" id="XQx-JE-uoj"/>
+                            <constraint firstItem="g3a-Af-eHI" firstAttribute="top" secondItem="EmF-Hm-rTi" secondAttribute="bottom" id="ZpP-xm-qi3"/>
+                            <constraint firstItem="EmF-Hm-rTi" firstAttribute="leading" secondItem="E7F-K0-xCc" secondAttribute="leading" id="z7b-B2-q1v"/>
+                            <constraint firstItem="QgM-1f-Zaj" firstAttribute="top" secondItem="E7F-K0-xCc" secondAttribute="bottom" id="zpy-qa-9lM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="行为识别" id="3Fp-eB-t5t"/>
                     <connections>
                         <outlet property="displayLabel" destination="edx-51-LzJ" id="B1P-fI-Mqw"/>
+                        <outlet property="displayStepCounter" destination="yG3-Sl-xZG" id="Nq0-gA-iDg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfT-Tt-h5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2509.5999999999999" y="-297.30134932533736"/>
         </scene>
-        <!--加速度-->
+        <!--加速度传感器-->
         <scene sceneID="Xsc-ei-37F">
             <objects>
                 <viewController id="GKO-OE-1Zc" customClass="BXAccelerometerViewController" sceneMemberID="viewController">
@@ -236,7 +307,7 @@
                             <constraint firstItem="o2r-iV-ePQ" firstAttribute="leading" secondItem="EHQ-w8-hjB" secondAttribute="leading" id="sel-0Q-tNm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="加速度" id="rPi-Jl-QGy"/>
+                    <navigationItem key="navigationItem" title="加速度传感器" id="rPi-Jl-QGy"/>
                     <connections>
                         <outlet property="xLineChart" destination="EHQ-w8-hjB" id="YTK-MN-Kqc"/>
                         <outlet property="yLineChart" destination="o2r-iV-ePQ" id="PB2-JB-Y8i"/>
@@ -247,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="3144.8000000000002" y="-297.30134932533736"/>
         </scene>
-        <!--螺旋仪-->
+        <!--陀螺仪传感器-->
         <scene sceneID="23i-1F-vPi">
             <objects>
                 <viewController id="yVu-at-Szf" customClass="BXGyroViewController" sceneMemberID="viewController">
@@ -340,7 +411,7 @@
                             <constraint firstItem="0mE-f8-JRU" firstAttribute="top" secondItem="oFF-ZK-elI" secondAttribute="bottom" constant="2" id="xs5-FA-4BU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="螺旋仪" id="t59-yQ-uSG"/>
+                    <navigationItem key="navigationItem" title="陀螺仪传感器" id="t59-yQ-uSG"/>
                     <connections>
                         <outlet property="xLineChart" destination="M3a-hs-g96" id="PxZ-Et-0Wg"/>
                         <outlet property="yLineChart" destination="0mE-f8-JRU" id="Xsu-I7-jcR"/>
@@ -350,6 +421,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQi-tG-EF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2510" y="363"/>
+        </scene>
+        <!--磁力计传感器-->
+        <scene sceneID="mHD-dt-oJ3">
+            <objects>
+                <viewController id="Yyy-tK-vBD" customClass="BXMagnetometerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7iP-Wo-gIh"/>
+                        <viewControllerLayoutGuide type="bottom" id="CgO-hZ-nHK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZkW-tc-2fM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass" translatesAutoresizingMaskIntoConstraints="NO" id="jGZ-hi-Imr">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="62j-GZ-qTD"/>
+                                    <constraint firstAttribute="width" secondItem="jGZ-hi-Imr" secondAttribute="height" multiplier="1:1" id="qe9-aa-p7R"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X 轴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyU-0f-uis">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="fGf-NG-Brh"/>
+                                    <constraint firstAttribute="height" constant="16" id="iHR-qK-Vjh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdI-mA-Hgt">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Hn-KJ-YLz"/>
+                                </constraints>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAction:" destination="Yyy-tK-vBD" eventType="touchUpInside" id="hln-X4-qt8"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftz-ln-ucK" customClass="BXLineChart">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="xil-yD-HUY"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y 轴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWk-ro-QdW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="38t-CC-VZf"/>
+                                    <constraint firstAttribute="height" constant="16" id="Hi7-Eo-pXG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AM7-Bz-U3B" customClass="BXLineChart">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Z 轴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-nX-Ndt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="4gm-7p-ZW4"/>
+                                    <constraint firstAttribute="height" constant="16" id="wuQ-Wr-9EX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="xy3-38-sVG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-9U-fSS" customClass="BXLineChart">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jdI-mA-Hgt" firstAttribute="top" secondItem="7iP-Wo-gIh" secondAttribute="bottom" constant="30" id="0rR-YF-zDh"/>
+                            <constraint firstItem="nyU-0f-uis" firstAttribute="leading" secondItem="ZkW-tc-2fM" secondAttribute="leading" constant="12" id="1Ws-Ju-baT"/>
+                            <constraint firstItem="jGZ-hi-Imr" firstAttribute="centerX" secondItem="ZkW-tc-2fM" secondAttribute="centerX" id="1hk-bU-Dfp"/>
+                            <constraint firstItem="AM7-Bz-U3B" firstAttribute="height" secondItem="Ftz-ln-ucK" secondAttribute="height" id="4g3-EK-Hre"/>
+                            <constraint firstItem="ffv-9U-fSS" firstAttribute="top" secondItem="ahR-nX-Ndt" secondAttribute="bottom" id="62B-0F-ME3"/>
+                            <constraint firstItem="ffv-9U-fSS" firstAttribute="height" secondItem="Ftz-ln-ucK" secondAttribute="height" id="9Cn-Tk-lMD"/>
+                            <constraint firstItem="jdI-mA-Hgt" firstAttribute="leading" secondItem="ZkW-tc-2fM" secondAttribute="leading" constant="12" id="9Kc-p2-Orl"/>
+                            <constraint firstItem="ffv-9U-fSS" firstAttribute="leading" secondItem="Ftz-ln-ucK" secondAttribute="leading" id="BoE-Ay-N1F"/>
+                            <constraint firstAttribute="trailing" secondItem="jdI-mA-Hgt" secondAttribute="trailing" constant="12" id="EXc-Ci-Pai"/>
+                            <constraint firstItem="Ftz-ln-ucK" firstAttribute="top" secondItem="jGZ-hi-Imr" secondAttribute="bottom" constant="15" id="JQY-9s-sRo"/>
+                            <constraint firstItem="AM7-Bz-U3B" firstAttribute="top" secondItem="Ftz-ln-ucK" secondAttribute="bottom" constant="20" id="JaE-BV-E8g"/>
+                            <constraint firstItem="mWk-ro-QdW" firstAttribute="leading" secondItem="ZkW-tc-2fM" secondAttribute="leading" constant="12" id="NpM-v9-hAY"/>
+                            <constraint firstItem="ffv-9U-fSS" firstAttribute="top" secondItem="AM7-Bz-U3B" secondAttribute="bottom" constant="20" id="QrC-sO-DeY"/>
+                            <constraint firstItem="Ftz-ln-ucK" firstAttribute="top" secondItem="nyU-0f-uis" secondAttribute="bottom" constant="3" id="UVe-nY-alM"/>
+                            <constraint firstItem="AM7-Bz-U3B" firstAttribute="leading" secondItem="Ftz-ln-ucK" secondAttribute="leading" id="ZoN-Aj-9S6"/>
+                            <constraint firstItem="jGZ-hi-Imr" firstAttribute="top" secondItem="jdI-mA-Hgt" secondAttribute="bottom" constant="15" id="bvt-VW-07M"/>
+                            <constraint firstItem="AM7-Bz-U3B" firstAttribute="top" secondItem="mWk-ro-QdW" secondAttribute="bottom" constant="2" id="fFv-a9-fLn"/>
+                            <constraint firstAttribute="trailing" secondItem="Ftz-ln-ucK" secondAttribute="trailing" constant="12" id="fer-Zk-Skf"/>
+                            <constraint firstItem="Ftz-ln-ucK" firstAttribute="leading" secondItem="ZkW-tc-2fM" secondAttribute="leading" constant="12" id="gu6-ov-piA"/>
+                            <constraint firstItem="AM7-Bz-U3B" firstAttribute="trailing" secondItem="Ftz-ln-ucK" secondAttribute="trailing" id="i2Z-Ld-vO5"/>
+                            <constraint firstItem="ffv-9U-fSS" firstAttribute="trailing" secondItem="AM7-Bz-U3B" secondAttribute="trailing" id="kSs-2x-vQX"/>
+                            <constraint firstItem="ahR-nX-Ndt" firstAttribute="leading" secondItem="ZkW-tc-2fM" secondAttribute="leading" constant="12" id="xLJ-Lg-lx8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="磁力计传感器" id="gDo-eE-v8N"/>
+                    <connections>
+                        <outlet property="arrowImageView" destination="jGZ-hi-Imr" id="spX-B8-v2v"/>
+                        <outlet property="xLineChart" destination="Ftz-ln-ucK" id="aqW-5H-FfG"/>
+                        <outlet property="yLineChart" destination="AM7-Bz-U3B" id="GIY-vN-2Ao"/>
+                        <outlet property="zLineChart" destination="ffv-9U-fSS" id="73A-dD-C9R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2r-Uu-sUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3156" y="363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yfc-QR-YL9">
@@ -370,4 +550,7 @@
             <point key="canvasLocation" x="853.60000000000002" y="95.802098950524751"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="1278" height="1278"/>
+    </resources>
 </document>

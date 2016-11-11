@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *displayStepCounter;
+
 @property (nonatomic, strong) BXMotionManager *motionManager;
 
 @end
@@ -23,7 +25,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setMotionManager];
+    
+    [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+    
+    // 监听有物品靠近还是离开
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityStateDidChange) name:UIDeviceProximityStateDidChangeNotification object:nil];
+
     // Do any additional setup after loading the view.
+}
+
+- (void)proximityStateDidChange
+{
+    if ([UIDevice currentDevice].proximityState) {
+        NSLog(@"有物品靠近");
+    } else {
+        NSLog(@"有物品离开");
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,9 +60,18 @@
         if (![self.displayLabel.text isEqualToString:@"--"] && (status == 0)) {
             
         } else {
-            self.displayLabel.text = activity;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.displayLabel.text = activity;
+            });
         }
     }];
+    
+    [motionManager setMotionPedometerBlock:^(NSNumber *number){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.displayStepCounter.text = [NSString stringWithFormat:@"已走 %@ 步",number];
+        });
+    }];
+    
 }
 - (IBAction)startAction:(UIButton *)sender {
     if (!sender.selected) {
@@ -58,6 +84,16 @@
     sender.selected = !sender.selected;
 }
 
+- (IBAction)startSetpAction:(UIButton *)sender {
+    if (!sender.selected) {
+        [self.motionManager startPedometer];
+        [sender setTitle:@"停止" forState:UIControlStateNormal];
+    } else {
+        [self.motionManager stopPedometer];
+        [sender setTitle:@"开始" forState:UIControlStateNormal];
+    }
+    sender.selected = !sender.selected;
+}
 
 
 @end

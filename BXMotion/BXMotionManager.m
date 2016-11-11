@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) CMMotionActivityManager *activityManager;
 @property (strong, nonatomic) CMMotionManager *motionManager;
+@property (strong, nonatomic) CMPedometer *pedometer;
 
 @end
 
@@ -112,7 +113,7 @@
 - (void)startGyro {
     if (!_motionManager) {
         _motionManager = [[CMMotionManager alloc] init];
-        _motionManager.accelerometerUpdateInterval = _alInterval;
+        _motionManager.gyroUpdateInterval = _gyroInterval;
     }
     [self.motionManager startGyroUpdatesToQueue:[NSOperationQueue currentQueue]
                                     withHandler:^(CMGyroData *gyroData, NSError *error) {
@@ -156,4 +157,53 @@
     [_motionManager stopAccelerometerUpdates];
 }
 
+
+- (void)startMagnetometer {
+    if (!_motionManager) {
+        _motionManager = [[CMMotionManager alloc] init];
+    }
+    _motionManager.magnetometerUpdateInterval = _magnetometerInterval;
+    [self.motionManager startMagnetometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMMagnetometerData * _Nullable magnetometerData, NSError * _Nullable error) {
+        
+        double x = magnetometerData.magneticField.x;
+        double y = magnetometerData.magneticField.y;
+        double z = magnetometerData.magneticField.z;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (_motionMagnetometerBlock) {
+                _motionMagnetometerBlock(x,y,z);
+            }
+        });
+    }];
+}
+
+- (void)stopMagnetometer {
+    [self.motionManager stopMagnetometerUpdates];
+}
+
+
+- (void)startPedometer {
+    if ([CMPedometer isStepCountingAvailable]) {
+        if (!_pedometer) {
+            CMPedometer *pedometer = [[CMPedometer alloc]init];
+            
+            self.pedometer = pedometer;
+        }
+    }
+
+    [_pedometer startPedometerEventUpdatesWithHandler:^(CMPedometerEvent * _Nullable pedometerEvent, NSError * _Nullable error) {
+        
+    }];
+    [_pedometer startPedometerUpdatesFromDate:[NSDate date] withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
+        CMPedometerData *data=(CMPedometerData *)pedometerData;
+        NSNumber *number = data.numberOfSteps;
+        NSLog(@"number = %@",number);
+        if (_motionPedometerBlock) {
+            _motionPedometerBlock(number);
+        }
+    }];
+}
+
+- (void)stopPedometer {
+    [_pedometer stopPedometerUpdates];
+}
 @end

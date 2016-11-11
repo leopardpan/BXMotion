@@ -13,6 +13,7 @@
 		FE4A73E61DCD6D2B004228C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4A73E41DCD6D2B004228C6 /* Main.storyboard */; };
 		FE4A73E81DCD6D2B004228C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE4A73E71DCD6D2B004228C6 /* Assets.xcassets */; };
 		FE4A73EB1DCD6D2B004228C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4A73E91DCD6D2B004228C6 /* LaunchScreen.storyboard */; };
+		FE887B711DD2FF0500D980E8 /* BXMagnetometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE887B701DD2FF0500D980E8 /* BXMagnetometerViewController.m */; };
 		FEAFC42D1DCDDA1D002B98F5 /* BXLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAFC42C1DCDDA1D002B98F5 /* BXLineChart.m */; };
 		FEB6B2AD1DCDAB86001B3134 /* BXMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB6B2AC1DCDAB86001B3134 /* BXMotionManager.m */; };
 		FEB6B2B01DCDABA1001B3134 /* BXAccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB6B2AF1DCDABA1001B3134 /* BXAccelerometerViewController.m */; };
@@ -32,6 +33,8 @@
 		FE4A73E71DCD6D2B004228C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE4A73EA1DCD6D2B004228C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4A73EC1DCD6D2B004228C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE887B6F1DD2FF0500D980E8 /* BXMagnetometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXMagnetometerViewController.h; sourceTree = "<group>"; };
+		FE887B701DD2FF0500D980E8 /* BXMagnetometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXMagnetometerViewController.m; sourceTree = "<group>"; };
 		FEAFC42B1DCDDA1D002B98F5 /* BXLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXLineChart.h; sourceTree = "<group>"; };
 		FEAFC42C1DCDDA1D002B98F5 /* BXLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXLineChart.m; sourceTree = "<group>"; };
 		FEB6B2AB1DCDAB86001B3134 /* BXMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXMotionManager.h; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				FEB6B2AF1DCDABA1001B3134 /* BXAccelerometerViewController.m */,
 				FEB6B2B41DCDCFB6001B3134 /* BXGyroViewController.h */,
 				FEB6B2B51DCDCFB6001B3134 /* BXGyroViewController.m */,
+				FE887B6F1DD2FF0500D980E8 /* BXMagnetometerViewController.h */,
+				FE887B701DD2FF0500D980E8 /* BXMagnetometerViewController.m */,
 				FEB6B2AB1DCDAB86001B3134 /* BXMotionManager.h */,
 				FEB6B2AC1DCDAB86001B3134 /* BXMotionManager.m */,
 				FEAFC42B1DCDDA1D002B98F5 /* BXLineChart.h */,
@@ -147,7 +152,7 @@
 				TargetAttributes = {
 					FE4A73D71DCD6D2B004228C6 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = W7YDEDGW4E;
+						DevelopmentTeam = QUK2C76XBA;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -195,6 +200,7 @@
 				FEB6B2B91DCDD21D001B3134 /* BXActivityViewController.m in Sources */,
 				FEB6B2B61DCDCFB6001B3134 /* BXGyroViewController.m in Sources */,
 				FE4A73E01DCD6D2B004228C6 /* AppDelegate.m in Sources */,
+				FE887B711DD2FF0500D980E8 /* BXMagnetometerViewController.m in Sources */,
 				FE4A73DD1DCD6D2B004228C6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,9 +321,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = W7YDEDGW4E;
+				DEVELOPMENT_TEAM = QUK2C76XBA;
 				INFOPLIST_FILE = BXMotion/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Baixin.BXMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -328,9 +334,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = W7YDEDGW4E;
+				DEVELOPMENT_TEAM = QUK2C76XBA;
 				INFOPLIST_FILE = BXMotion/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Baixin.BXMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";

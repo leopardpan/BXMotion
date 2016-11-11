@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// com.TalkingData.SensorViewer
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

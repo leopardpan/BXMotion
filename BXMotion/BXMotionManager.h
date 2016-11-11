@@ -22,15 +22,23 @@ typedef NS_ENUM(NSUInteger, ActivityStatus) {
 typedef void (^_BXMotionActivityBlock)(NSUInteger status, NSString *activity);
 typedef void (^_BXMotionAccelerometerBlock)(double x,double y,double z);
 typedef void (^_BXMotionGyroBlock)(double x,double y,double z);
+typedef void (^_BXMotionMagnetometerBlock)(double x,double y,double z);
+typedef void (^_BXMotionPedometerBlock)(NSNumber *number);
 
 @interface BXMotionManager : NSObject
 
 // accelerometerUpdateInterval
 @property (nonatomic, assign) NSTimeInterval alInterval;
 
+@property (nonatomic, assign) NSTimeInterval gyroInterval;
+
+@property (nonatomic, assign) NSTimeInterval magnetometerInterval;
+
 @property (copy, nonatomic) _BXMotionActivityBlock motionActivityBlock;
 @property (copy, nonatomic) _BXMotionAccelerometerBlock motionAccBlock;
-@property (copy, nonatomic) _BXMotionAccelerometerBlock motionGyroBlock;
+@property (copy, nonatomic) _BXMotionGyroBlock motionGyroBlock;
+@property (copy, nonatomic) _BXMotionMagnetometerBlock motionMagnetometerBlock;
+@property (copy, nonatomic) _BXMotionPedometerBlock motionPedometerBlock;
 
 // call back motionActivityBlock
 - (void)startActivity;
@@ -42,5 +50,14 @@ typedef void (^_BXMotionGyroBlock)(double x,double y,double z);
 
 - (void)startGyro;
 - (void)stopGyro;
+
+- (void)startMagnetometer;
+- (void)stopMagnetometer;
+
+//- (void)startDeviceMotion;
+//- (void)stopDeviceMotion;
+
+- (void)startPedometer;
+- (void)stopPedometer;
 
 @end
